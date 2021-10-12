@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.my.gank.R
 import com.my.gank.base.lifecycle.ActivityLifecycleObserver
+import com.my.gank.test.TestActivity2
 import com.my.gank.test.lifecycle.MyChronometer
 import com.my.gank.utils.LogUtils
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, TestActivity::class.java)
+                val intent = Intent(this, TestActivity2::class.java)
                 startActivity(intent)
             }
             else -> {
