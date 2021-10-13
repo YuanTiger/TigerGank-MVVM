@@ -23,7 +23,8 @@
 
         <activity android:name=".activity.TestActivity" />
         <activity android:name=".test.lifecycle.MyLocationTestActivity" />
-        <activity android:name=".test.viewmodel.ViewModelTestActivity" />
+        <activity android:name=".test.viewmodel.one.ViewModelTestActivity" />
+        <activity android:name=".test.viewmodel.two.ViewModelTestActivity_2" />
 
         <service android:name=".test.lifecycle.MyLocationService"/>
     </application>

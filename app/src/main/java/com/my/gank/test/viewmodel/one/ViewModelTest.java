@@ -1,4 +1,4 @@
-package com.my.gank.test.viewmodel;
+package com.my.gank.test.viewmodel.one;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

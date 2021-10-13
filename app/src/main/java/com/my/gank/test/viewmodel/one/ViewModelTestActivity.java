@@ -1,7 +1,6 @@
-package com.my.gank.test.viewmodel;
+package com.my.gank.test.viewmodel.one;
 
 import android.os.Bundle;
-import android.os.ParcelUuid;
 import android.view.View;
 import android.widget.TextView;
 

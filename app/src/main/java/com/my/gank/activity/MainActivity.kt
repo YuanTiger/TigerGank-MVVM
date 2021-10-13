@@ -7,9 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.my.gank.R
 import com.my.gank.base.lifecycle.ActivityLifecycleObserver
-import com.my.gank.test.lifecycle.MyLocationTestActivity
 import com.my.gank.test.lifecycle.MyChronometer
-import com.my.gank.test.viewmodel.ViewModelTestActivity
+import com.my.gank.test.viewmodel.one.ViewModelTestActivity
+import com.my.gank.test.viewmodel.two.ViewModelTestActivity_2
 
 /**
  * Author: mengyuan
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, ViewModelTestActivity::class.java)
+                val intent = Intent(this, ViewModelTestActivity_2::class.java)
                 startActivity(intent)
             }
             else -> {
