@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.my.gank.R
 import com.my.gank.base.lifecycle.ActivityLifecycleObserver
 import com.my.gank.test.databinding.one.DataBindingTestActivity
+import com.my.gank.test.databinding.three.DataBindingTestActivity_3
 import com.my.gank.test.databinding.two.DataBindingTestActivity_2
 import com.my.gank.test.lifecycle.MyChronometer
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, DataBindingTestActivity_2::class.java)
+                val intent = Intent(this, DataBindingTestActivity_3::class.java)
                 startActivity(intent)
             }
             else -> {

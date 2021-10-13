@@ -4,13 +4,14 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".base.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
@@ -27,6 +28,7 @@
         <activity android:name=".test.viewmodel.two.ViewModelTestActivity_2" />
         <activity android:name=".test.databinding.one.DataBindingTestActivity" />
         <activity android:name=".test.databinding.two.DataBindingTestActivity_2" />
+        <activity android:name=".test.databinding.three.DataBindingTestActivity_3" />
 
         <service android:name=".test.lifecycle.MyLocationService"/>
     </application>

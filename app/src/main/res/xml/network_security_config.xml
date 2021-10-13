@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--允许使用Http请求，适配Android Q-->
+<network-security-config>
+
+    <base-config cleartextTrafficPermitted="true" />
+
+
+</network-security-config>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--files-path      代表的根目录： Context.getFilesDir()-->
+    <!--cache-path      代表的根目录: getCacheDir()-->
+
+    <paths>
+        <external-path
+            name="camera_photos"
+            path="" />
+        <external-path
+            name="files_root"
+            path="Android/data/com.northland.mapple/" />
+        <external-path
+            name="external_storage_root"
+            path="." />
+
+        <external-files-path name="my_images" path="my_images" />
+
+        <cache-path name="cache" path="/" />
+    </paths>
+</resources>
