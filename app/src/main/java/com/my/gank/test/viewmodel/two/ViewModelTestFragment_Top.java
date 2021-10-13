@@ -14,8 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.my.gank.R;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * Author: mengyuan
  * Date  : 2021/10/13/2:43 下午
@@ -30,7 +28,7 @@ public class ViewModelTestFragment_Top extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_view_model_top, container, false);
         seekBar = rootView.findViewById(R.id.seek_bar_top);
 
