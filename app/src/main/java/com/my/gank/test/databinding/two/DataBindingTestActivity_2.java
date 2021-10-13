@@ -1,22 +1,16 @@
-package com.my.gank.test.databinding;
+package com.my.gank.test.databinding.two;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.my.gank.R;
+import com.my.gank.databinding.ActivityDataBinding2Binding;
 import com.my.gank.databinding.ActivityDataBindingBinding;
-import com.my.gank.test.viewmodel.one.ViewModelTest;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.my.gank.test.databinding.one.EventHandleListener;
+import com.my.gank.test.databinding.one.Idol;
 
 /**
  * Author: mengyuan
@@ -24,16 +18,16 @@ import java.util.TimerTask;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-public class DataBindingTestActivity extends AppCompatActivity {
+public class DataBindingTestActivity_2 extends AppCompatActivity {
 
 
-    private ActivityDataBindingBinding viewDataBinding;
+    private ActivityDataBinding2Binding viewDataBinding;
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
+        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding_2);
 
         Idol idol = new Idol("YuanTiger","*****");
         viewDataBinding.setIdol(idol);

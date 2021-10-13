@@ -25,7 +25,8 @@
         <activity android:name=".test.lifecycle.MyLocationTestActivity" />
         <activity android:name=".test.viewmodel.one.ViewModelTestActivity" />
         <activity android:name=".test.viewmodel.two.ViewModelTestActivity_2" />
-        <activity android:name=".test.databinding.DataBindingTestActivity" />
+        <activity android:name=".test.databinding.one.DataBindingTestActivity" />
+        <activity android:name=".test.databinding.two.DataBindingTestActivity_2" />
 
         <service android:name=".test.lifecycle.MyLocationService"/>
     </application>

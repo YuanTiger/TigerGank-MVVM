@@ -13,7 +13,7 @@
         <variable
             name="eventHandler"
             type="com.my.gank.test.databinding.one.EventHandleListener" />
-        
+
     </data>
 
 
@@ -44,52 +44,18 @@
             app:layout_constraintGuide_percent="0.5" />
 
 
-        <TextView
+        <include
             android:id="@+id/tv_title"
+            layout="@layout/include_data_binding_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="@{idol.name}"
-            android:textColor="#242323"
-            android:textSize="30sp"
+            app:idol="@{idol}"
+            app:eventHandler="@{eventHandler}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guide_line"
             tools:text="123123" />
-
-
-        <TextView
-            android:id="@+id/tv_second_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="@{idol.star}"
-            android:textColor="#666666"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
-            tools:text="123123" />
-
-
-        <Button
-            android:id="@+id/bt_like"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="喜欢"
-            android:textColor="#666666"
-            android:onClick="@{eventHandler.buttonOnClick}"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

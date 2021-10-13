@@ -1,4 +1,4 @@
-package com.my.gank.test.databinding;
+package com.my.gank.test.databinding.one;
 
 import android.content.Context;
 import android.view.View;
