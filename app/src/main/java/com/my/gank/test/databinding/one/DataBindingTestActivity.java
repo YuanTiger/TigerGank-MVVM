@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.my.gank.R;
-import com.my.gank.databinding.ActivityDataBindingBinding;
+import com.my.gank.databinding.ActivityDataBinding1Binding;
 
 /**
  * Author: mengyuan
@@ -18,13 +18,13 @@ import com.my.gank.databinding.ActivityDataBindingBinding;
 public class DataBindingTestActivity extends AppCompatActivity {
 
 
-    private ActivityDataBindingBinding viewDataBinding;
+    private ActivityDataBinding1Binding viewDataBinding;
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
+        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding_1);
 
         Idol idol = new Idol("YuanTiger","*****");
         viewDataBinding.setIdol(idol);
