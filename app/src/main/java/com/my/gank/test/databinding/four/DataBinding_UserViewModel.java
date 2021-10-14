@@ -20,7 +20,7 @@ public class DataBinding_UserViewModel extends BaseObservable {
 
 
     public DataBinding_UserViewModel() {
-        this.user = new DataBinding_User("YuanTiger");
+        this.user = new DataBinding_User("YuanTiger4");
     }
 
     @Bindable
