@@ -31,6 +31,7 @@
         <activity android:name=".test.databinding.three.DataBindingTestActivity_3" />
         <activity android:name=".test.databinding.four.DataBindingTestActivity_4" />
         <activity android:name=".test.databinding.five.DataBindingTestActivity_5" />
+        <activity android:name=".test.databinding.six.DataBindingTestActivity_6" />
 
         <service android:name=".test.lifecycle.MyLocationService"/>
     </application>
