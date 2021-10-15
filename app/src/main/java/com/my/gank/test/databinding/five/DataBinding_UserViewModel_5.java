@@ -18,6 +18,7 @@ import com.my.gank.utils.LogUtils;
  */
 public class DataBinding_UserViewModel_5 {
 
+    //ObservableField：双向绑定
     public ObservableField<DataBinding_User_5> userObservableField;
 
 

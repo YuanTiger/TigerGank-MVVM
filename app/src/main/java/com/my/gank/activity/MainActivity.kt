@@ -15,6 +15,7 @@ import com.my.gank.test.databinding.six.DataBindingTestActivity_6
 import com.my.gank.test.databinding.three.DataBindingTestActivity_3
 import com.my.gank.test.databinding.two.DataBindingTestActivity_2
 import com.my.gank.test.lifecycle.MyChronometer
+import com.my.gank.test.room.one.RoomTestActivity_1
 
 /**
  * Author: mengyuan
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, DataBindingTestActivity_7::class.java)
+                val intent = Intent(this, RoomTestActivity_1::class.java)
                 startActivity(intent)
             }
             else -> {
