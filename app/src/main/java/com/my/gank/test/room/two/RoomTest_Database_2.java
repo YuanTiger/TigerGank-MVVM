@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-@Database(entities = {RoomTest_User.class}, version = 1, exportSchema = false)
+@Database(entities = {RoomTest_User.class}, version = 2, exportSchema = true)
 public abstract class RoomTest_Database_2 extends RoomDatabase {
 
     private static final String DATABASE_NAME = "room_test_db.db";
