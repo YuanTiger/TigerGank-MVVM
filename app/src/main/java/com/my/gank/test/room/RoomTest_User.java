@@ -30,6 +30,9 @@ public class RoomTest_User {
     public int age;
 
 
+    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.INTEGER)
+    public int sex;
+
     public RoomTest_User(int id, String userName, int age) {
         this.id = id;
         this.userName = userName;
