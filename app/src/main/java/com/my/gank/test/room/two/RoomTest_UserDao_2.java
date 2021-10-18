@@ -1,5 +1,6 @@
-package com.my.gank.test.room.one;
+package com.my.gank.test.room.two;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -17,7 +18,7 @@ import java.util.List;
  * -----------
  */
 @Dao
-public interface RoomTest_UserDao_1 {
+public interface RoomTest_UserDao_2 {
 
     @Insert
     void insertUser(RoomTest_User... users);
@@ -26,13 +27,17 @@ public interface RoomTest_UserDao_1 {
     @Delete
     void deleteUser(RoomTest_User... users);
 
+
+    @Query("DELETE FROM roomtest_user")
+    void deleteAllUser();
+
     @Update
     void updateUser(RoomTest_User... users);
 
     @Query("SELECT * FROM roomtest_user")
-    List<RoomTest_User> getAllUser();
+    LiveData<List<RoomTest_User>> getAllUser();
 
 
     @Query("SELECT * FROM roomtest_user WHERE user_id = :id")
-    List<RoomTest_User> getUserById(int id);
+    LiveData<List<RoomTest_User>> getUserById(int id);
 }

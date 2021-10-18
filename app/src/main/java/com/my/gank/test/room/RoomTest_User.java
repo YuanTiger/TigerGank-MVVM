@@ -1,4 +1,4 @@
-package com.my.gank.test.room.one;
+package com.my.gank.test.room;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -10,6 +10,7 @@ import androidx.room.PrimaryKey;
  * Date  : 2021/10/15/4:26 下午
  * E-Mail: mengyuanzz@126.com
  * -----------
+ * User对象
  */
 //Entity：表名
 @Entity(tableName = "RoomTest_User")
