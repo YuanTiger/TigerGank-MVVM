@@ -61,6 +61,7 @@ public abstract class RoomTest_Database_2 extends RoomDatabase {
         if (mInstance == null) {
             mInstance = Room.databaseBuilder(context.getApplicationContext(), RoomTest_Database_2.class, DATABASE_NAME)
                     .addMigrations(MIGRATION_1_2,MIGRATION_2_3)
+                    .createFromAsset("test/room_test_user_pre.db")
                     .build();
         }
         return mInstance;
