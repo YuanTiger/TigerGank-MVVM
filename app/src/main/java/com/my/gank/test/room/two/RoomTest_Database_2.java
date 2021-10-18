@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-@Database(entities = {RoomTest_User.class}, version = 2, exportSchema = true)
+@Database(entities = {RoomTest_User.class}, version = 3, exportSchema = true)
 public abstract class RoomTest_Database_2 extends RoomDatabase {
 
     private static final String DATABASE_NAME = "room_test_db.db";
@@ -33,12 +33,34 @@ public abstract class RoomTest_Database_2 extends RoomDatabase {
         }
     };
 
+    /**
+     * DB销毁重建策略，模拟字段类型变更
+     * 1、创建新的数据库临时表，并将字段类型更改为最新的字段类型；
+     * 2、从原表中复制数据；
+     * 3、将临时表的表名改为原表名。
+     */
+    static final Migration MIGRATION_2_3 = new Migration(2, 3) {
+        @Override
+        public void migrate(@NonNull @NotNull SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE IF NOT EXISTS temp_room_test_user (" +
+                    "`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                    "`user_name` TEXT," +
+                    " `age` INTEGER NOT NULL, " +
+                    "`sex` TEXT DEFAULT 'M')"
+            );
+
+            database.execSQL("INSERT INTO temp_room_test_user(user_name,age,sex) SELECT user_name,age,sex FROM RoomTest_User");
+
+            database.execSQL("DROP TABLE RoomTest_User");
+
+            database.execSQL("ALTER TABLE temp_room_test_user RENAME TO RoomTest_User");
+        }
+    };
 
     public static synchronized RoomTest_Database_2 getInstance(Context context) {
         if (mInstance == null) {
             mInstance = Room.databaseBuilder(context.getApplicationContext(), RoomTest_Database_2.class, DATABASE_NAME)
-                    .addMigrations(MIGRATION_1_2)
-                    .fallbackToDestructiveMigration()
+                    .addMigrations(MIGRATION_1_2,MIGRATION_2_3)
                     .build();
         }
         return mInstance;
