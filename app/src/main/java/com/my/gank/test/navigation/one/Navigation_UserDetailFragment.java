@@ -1,6 +1,7 @@
 package com.my.gank.test.navigation.one;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,14 @@ public class Navigation_UserDetailFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        Navigation_HomeFragmentArgs args = Navigation_HomeFragmentArgs.fromBundle(getArguments());
+        String userName = args.getUserName();
+        int age = args.getAge();
+
         Button btJump = getView().findViewById(R.id.bt_jump_home);
+        btJump.setText(userName+"::"+age);
+
         btJump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

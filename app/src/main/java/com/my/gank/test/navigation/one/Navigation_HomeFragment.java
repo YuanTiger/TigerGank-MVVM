@@ -41,8 +41,14 @@ public class Navigation_HomeFragment extends Fragment {
         btJump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Navigation_HomeFragmentArgs.Builder()
+                        .setUserName("Qwert")
+                        .setAge(18)
+                        .build()
+                        .toBundle();
+
                 NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_homeFragment_to_detailFragment);
+                navController.navigate(R.id.action_homeFragment_to_detailFragment, bundle);
             }
         });
     }
