@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment"
+    android:id="@+id/nav_1">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.my.gank.test.navigation.one.Navigation_HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_navigation_1">
+
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.my.gank.test.navigation.one.Navigation_UserDetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_navigation_detail_1">
+
+
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+</navigation>
