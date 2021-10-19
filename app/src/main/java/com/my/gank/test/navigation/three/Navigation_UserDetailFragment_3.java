@@ -46,8 +46,8 @@ public class Navigation_UserDetailFragment_3 extends Fragment {
 
         Bundle arguments = getArguments();
         if(arguments != null){
-            String user_name = arguments.getString("user_name");
-            btJump.setText(user_name);
+            String params = arguments.getString("params");
+            btJump.setText(params);
         }
 
         btJump.setOnClickListener(new View.OnClickListener() {
