@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
+import androidx.work.Data;
 import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
+import androidx.work.Operation;
 import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
@@ -45,6 +47,9 @@ public class WorkManager_Activity_1 extends AppCompatActivity {
                 .build();
 
 
+        Data inputData = new Data.Builder()
+                .putString("input_data","YuanString")
+                .build();
         OneTimeWorkRequest workRequest1 = new OneTimeWorkRequest.Builder(MyWork_1.class)
                 //设置触发条件
                 .setConstraints(constraints)
@@ -54,25 +59,29 @@ public class WorkManager_Activity_1 extends AppCompatActivity {
                 .setBackoffCriteria(BackoffPolicy.LINEAR, 2, TimeUnit.SECONDS)
                 //设置tag标签
                 .addTag("workTest")
+                .setInputData(inputData)
                 .build();
 
         WorkManager workManager = WorkManager.getInstance(this);
         workManager.enqueue(workRequest1);
-
         workManager.getWorkInfoByIdLiveData(workRequest1.getId()).observe(this, new Observer<WorkInfo>() {
             @Override
             public void onChanged(WorkInfo workInfo) {
                 LogUtils.iTag("YuanTiger","WorkManager-onChanged");
-
+                if(workInfo != null && workInfo.getState() == WorkInfo.State.SUCCEEDED){
+                    String output_data = workInfo.getOutputData().getString("output_data");
+                    LogUtils.iTag("YuanTiger","WorkManager-onChanged:"+output_data);
+                }
             }
         });
-        //取消任务
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                workManager.cancelWorkById(workRequest1.getId());
-            }
-        },2000);
+
+//        //取消任务
+//        new Timer().schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                workManager.cancelWorkById(workRequest1.getId());
+//            }
+//        },2000);
 
     }
 }
