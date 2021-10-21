@@ -26,7 +26,8 @@ public class MyWork_1 extends Worker {
     @Override
     public Result doWork() {
         SystemClock.sleep(1000 * 2);
-        LogUtils.iTag("YuanTiger","doWork");
-        return Result.success();
+        LogUtils.iTag("YuanTiger","WorkManager-doWork");
+//        return Result.success();
+        return Result.retry();
     }
 }
