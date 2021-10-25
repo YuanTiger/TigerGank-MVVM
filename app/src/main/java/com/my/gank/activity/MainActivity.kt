@@ -18,6 +18,7 @@ import com.my.gank.test.lifecycle.MyChronometer
 import com.my.gank.test.navigation.one.Navigation_Activity_1
 import com.my.gank.test.navigation.three.Navigation_Activity_3
 import com.my.gank.test.navigation.two.Navigation_Activity_2
+import com.my.gank.test.paging.one.Paging_Activity_1
 import com.my.gank.test.room.one.RoomTestActivity_1
 import com.my.gank.test.room.two.RoomTestActivity_2
 import com.my.gank.test.workmanager.one.WorkManager_Activity_1
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, WorkManager_Activity_1::class.java)
+                val intent = Intent(this, Paging_Activity_1::class.java)
                 startActivity(intent)
             }
             else -> {
