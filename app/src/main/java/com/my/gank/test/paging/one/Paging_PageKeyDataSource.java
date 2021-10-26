@@ -19,7 +19,7 @@ import retrofit2.Response;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-public class Paging_RoomPageKeyDataSource extends PageKeyedDataSource<Integer, RoomInfoBean.AudioRoomInfo> {
+public class Paging_PageKeyDataSource extends PageKeyedDataSource<Integer, RoomInfoBean.AudioRoomInfo> {
 
 
 

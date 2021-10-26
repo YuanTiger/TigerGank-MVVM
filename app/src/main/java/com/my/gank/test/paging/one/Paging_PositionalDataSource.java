@@ -18,7 +18,7 @@ import retrofit2.Response;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-public class Paging_RoomDataSource extends PositionalDataSource<RoomInfoBean.AudioRoomInfo> {
+public class Paging_PositionalDataSource extends PositionalDataSource<RoomInfoBean.AudioRoomInfo> {
 
 
     /**
@@ -29,7 +29,7 @@ public class Paging_RoomDataSource extends PositionalDataSource<RoomInfoBean.Aud
         Paging_RequestManager.getInstance().getApi().getRoomList(0, true, "0", 0, 0).enqueue(new Callback<BaseBean<RoomInfoBean>>() {
             @Override
             public void onResponse(Call<BaseBean<RoomInfoBean>> call, Response<BaseBean<RoomInfoBean>> response) {
-                if (response.body() != null) {
+                if (response.body() != null && response.body().dataInfo.list != null) {
                     //把数据传递给PageList
                     callback.onResult(response.body().dataInfo.list, response.body().dataInfo.list.size(), response.body().dataInfo.total);
                     LogUtils.iTag("YuanTiger","loadInitial:"+response.body().dataInfo.list.size());
@@ -52,7 +52,7 @@ public class Paging_RoomDataSource extends PositionalDataSource<RoomInfoBean.Aud
         Paging_RequestManager.getInstance().getApi().getRoomList(params.startPosition, true, "0", 0, 0).enqueue(new Callback<BaseBean<RoomInfoBean>>() {
             @Override
             public void onResponse(Call<BaseBean<RoomInfoBean>> call, Response<BaseBean<RoomInfoBean>> response) {
-                if (response.body() != null) {
+                if (response.body() != null && response.body().dataInfo.list != null) {
                     //把数据传递给PageList
                     callback.onResult(response.body().dataInfo.list);
                     LogUtils.iTag("YuanTiger","loadRange:"+response.body().dataInfo.list.size());
