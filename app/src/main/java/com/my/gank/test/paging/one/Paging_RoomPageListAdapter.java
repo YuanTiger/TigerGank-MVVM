@@ -53,22 +53,11 @@ public class Paging_RoomPageListAdapter extends PagedListAdapter<RoomInfoBean.Au
         }
     };
 
-    private Context context;
 
-    private List<RoomInfoBean.AudioRoomInfo> roomInfoList;
-
-    protected Paging_RoomPageListAdapter(Context context) {
+    protected Paging_RoomPageListAdapter() {
         super(DIFF_CALLBACK);
-        this.context = context;
     }
 
-
-    public void setRoomList(List<RoomInfoBean.AudioRoomInfo> roomList) {
-        if (roomInfoList == null) {
-            roomInfoList = new ArrayList<>();
-        }
-        roomInfoList.addAll(roomList);
-    }
 
     @NonNull
     @Override
@@ -79,7 +68,7 @@ public class Paging_RoomPageListAdapter extends PagedListAdapter<RoomInfoBean.Au
 
     @Override
     public void onBindViewHolder(@NonNull RoomHolder holder, int position) {
-        holder.refreshData(roomInfoList.get(position), position);
+        holder.refreshData(getItem(position), position);
     }
 
 

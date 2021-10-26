@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="2dp"
-                android:text="1人在线"
+                android:text="人在线"
                 android:textColor="#999999"
                 android:textSize="12sp" />
 

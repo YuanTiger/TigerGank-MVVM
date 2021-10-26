@@ -15,6 +15,6 @@ import retrofit2.http.Query;
  */
 public interface Paging_Api {
 
-    @GET("linkRecommend?index=0&is_index=true&sex=0&type=0&_imei=035f47991c6d8916&_t=200&_v=10110&_app=3&_s_v=9&_s_n=RedmiNote5&_net=NETWORK_WIFI&_token=3119511_200_1635143258195_1b511a9758066c03&_c=&_at=2&_time=1635143500763")
+    @GET("linkRecommend?index=0&is_index=true&sex=0&type=0&_imei=035f47991c6d8916&_t=200&_v=10110&_app=3&_s_v=9&_s_n=RedmiNote5&_net=NETWORK_WIFI&_token=3119511_200_1635217172857_458b611112942758&_c=&_at=2&_time=1635229921897")
     Call<BaseBean<RoomInfoBean>> getRoomList(@Query("index") int index, @Query("is_index") boolean isRefresh, @Query("tag_id") String tag_id, @Query("sex") int sex, @Query("type") int type);
 }

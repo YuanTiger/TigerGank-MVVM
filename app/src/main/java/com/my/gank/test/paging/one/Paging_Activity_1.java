@@ -35,7 +35,7 @@ public class Paging_Activity_1 extends AppCompatActivity {
 
         viewDataBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
-        Paging_RoomPageListAdapter adapter = new Paging_RoomPageListAdapter(this);
+        Paging_RoomPageListAdapter adapter = new Paging_RoomPageListAdapter();
         viewDataBinding.recyclerView.setAdapter(adapter);
 
 
@@ -44,8 +44,7 @@ public class Paging_Activity_1 extends AppCompatActivity {
         roomViewModel.roomList.observe(this, new Observer<PagedList<RoomInfoBean.AudioRoomInfo>>() {
             @Override
             public void onChanged(PagedList<RoomInfoBean.AudioRoomInfo> audioRoomInfoList) {
-                adapter.setRoomList(audioRoomInfoList);
-                adapter.notifyDataSetChanged();
+                adapter.submitList(audioRoomInfoList);
             }
         });
 
