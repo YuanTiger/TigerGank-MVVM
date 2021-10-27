@@ -1,6 +1,10 @@
 package com.my.gank.test.paging.one.bean;
 
 import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import java.util.List;
 
@@ -19,32 +23,30 @@ public class RoomInfoBean {
 
     public List<AudioRoomInfo> list;
 
+    @Entity(tableName = "paging_room_info")
     public static class AudioRoomInfo {
-        public int userId;
+
+        @PrimaryKey(autoGenerate = true)
+        @ColumnInfo(name = "no",typeAffinity = ColumnInfo.INTEGER)
+        public int NO;
+        @ColumnInfo(name = "room_id",typeAffinity = ColumnInfo.INTEGER)
         public int roomId;
-        //房间类型 1-文字房、2-1v1、3-六麦房、4-10麦房
+        @ColumnInfo(name = "room_type",typeAffinity = ColumnInfo.INTEGER)
         public int roomType;
+        @ColumnInfo(name = "room_name",typeAffinity = ColumnInfo.TEXT)
         public String roomName;
+        @ColumnInfo(name = "room_pic",typeAffinity = ColumnInfo.TEXT)
         public String roomPic;
-        //房主在不在房间
-        public boolean online;
+
+        @Ignore
         public int onlineNum;
-        public List<Integer> tagIds;
-        //上锁状态：1有密码，其他无密码
+        @Ignore
         public int passwordState;
-        //是否关注该房间
-        public boolean follow;
+        @Ignore
         public CurrentUserInfo currentUser;
+        @Ignore
         //房间当前状态：1女孩多、2等待连接、3有CP、4热闹、5已关注
         public int roomCurrentState;
-        //门牌id
-        public int doorId;
-        //足迹状态
-        public boolean footprint;
-        //是否有红包
-        public boolean red;
-        //用户照片列表，目前用于扩圈、柜柜
-        public List<String> userPicList;
 
 
         @Override
@@ -52,7 +54,6 @@ public class RoomInfoBean {
             AudioRoomInfo roomInfo = (AudioRoomInfo) obj;
             return roomName.equals(roomInfo.roomName)
                     && roomPic.equals(roomInfo.roomPic)
-                    && red == roomInfo.red
                     && passwordState == roomInfo.passwordState
                     ;
         }

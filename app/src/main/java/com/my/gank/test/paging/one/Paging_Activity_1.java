@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.my.gank.R;
 import com.my.gank.databinding.ActivityPaging1Binding;
@@ -48,6 +49,13 @@ public class Paging_Activity_1 extends AppCompatActivity {
             }
         });
 
+        viewDataBinding.refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                roomViewModel.refresh();
+                viewDataBinding.refreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 }

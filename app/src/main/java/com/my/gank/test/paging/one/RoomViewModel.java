@@ -1,11 +1,18 @@
 package com.my.gank.test.paging.one;
 
+import android.app.Application;
+import android.os.AsyncTask;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PagedList;
 
 import com.my.gank.test.paging.one.bean.RoomInfoBean;
+import com.my.gank.test.paging.one.db.Paging_MyDatabase;
+import com.my.gank.test.paging.one.db.Paging_RoomInfoDao;
 
 /**
  * Author: mengyuan
@@ -13,24 +20,35 @@ import com.my.gank.test.paging.one.bean.RoomInfoBean;
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-public class RoomViewModel extends ViewModel {
+public class RoomViewModel extends AndroidViewModel {
 
 
     public LiveData<PagedList<RoomInfoBean.AudioRoomInfo>> roomList;
 
-    public RoomViewModel(){
-        PagedList.Config config = new PagedList.Config.Builder()
-                //设置控件占位
-                .setEnablePlaceholders(false)
-                //设置每一页有多少条数据
-                .setPageSize(47)
-                //设置距离底部还有多少条数据时，开始加载下一页
-                .setPrefetchDistance(2)
-                //设置首次加载的数量
-                //.setInitialLoadSizeHint(50)
-                //设置一共有多少页
-                .setMaxSize(655535)
+
+
+    public RoomViewModel(@NonNull Application application) {
+        super(application);
+        Paging_RoomInfoDao roomInfoDao = Paging_MyDatabase.getInstance(application).getRoomInfoDao();
+
+        roomList = new LivePagedListBuilder<>(roomInfoDao.getRoomList(),50)
+                .setBoundaryCallback(new RoomInfoBoundaryCallback(application))
                 .build();
-        roomList = new LivePagedListBuilder<>(new Paging_RoomDataSourceFactory(),config).build();
+
     }
+
+    /**
+     * 刷新
+     */
+    public void refresh(){
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                Paging_MyDatabase.getInstance(getApplication())
+                        .getRoomInfoDao()
+                        .clear();
+            }
+        });
+    }
+
 }
