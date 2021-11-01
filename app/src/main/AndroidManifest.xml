@@ -25,6 +25,7 @@
             <nav-graph android:value="@navigation/nav_3" />
         </activity>
 
+        <activity android:name=".example.tabao.onsell.OnSellActivity" />
         <activity android:name=".activity.TestActivity" />
         <activity android:name=".test.lifecycle.MyLocationTestActivity" />
         <activity android:name=".test.viewmodel.one.ViewModelTestActivity" />
