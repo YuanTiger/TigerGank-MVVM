@@ -1,6 +1,7 @@
 package com.my.gank.example.tabao.api
 
 import android.security.identity.ResultData
+import com.my.gank.example.tabao.onsell.bean.OnSellData
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -19,8 +20,5 @@ interface ApiService {
 
 
     @GET("onSell/{page}")
-    suspend fun getOnSellList(@Path("page") page:Int):ResultData{
-
-    }
-
+    suspend fun getOnSellList(@Path("page") page:Int):ResultData_TaoBao<OnSellData>  
 }

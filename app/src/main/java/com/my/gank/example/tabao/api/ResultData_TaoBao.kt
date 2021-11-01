@@ -6,7 +6,7 @@ package com.my.gank.example.tabao.api
  * E-Mail: mengyuanzz@126.com
  * -----------
  */
-data class ResultData<T>(
+data class ResultData_TaoBao<T>(
     val success: Boolean,
     val code: Int,
     val message: String,
