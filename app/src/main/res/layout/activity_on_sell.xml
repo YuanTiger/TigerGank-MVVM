@@ -12,9 +12,32 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:background="#dfdfdf"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="#dfdfdf"
+            android:visibility="gone" />
+
+
+        <include
+            android:id="@+id/emptyView"
+            layout="@layout/view_on_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/loadingView"
+            layout="@layout/view_on_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/errorView"
+            layout="@layout/view_on_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

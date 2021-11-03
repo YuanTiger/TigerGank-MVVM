@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="48dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="48dp"
+    android:paddingBottom="24dp">
+
+
+    <LinearLayout
+        android:id="@+id/llErrorContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivErrorPic"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="点击重新加载" />
+    </LinearLayout>
+
+
+</LinearLayout>

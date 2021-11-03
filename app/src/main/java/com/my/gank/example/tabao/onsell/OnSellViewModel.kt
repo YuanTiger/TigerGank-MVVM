@@ -3,8 +3,10 @@ package com.my.gank.example.tabao.onsell
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.my.gank.example.tabao.base.LoadState
 import com.my.gank.example.tabao.onsell.bean.MapData
 import kotlinx.coroutines.launch
+import java.lang.NullPointerException
 
 /**
  * Author: mengyuan
@@ -15,6 +17,8 @@ import kotlinx.coroutines.launch
 class OnSellViewModel : ViewModel() {
 
     val contentList = MutableLiveData<List<MapData>>()
+
+    val pageState = MutableLiveData<LoadState>()
 
     companion object {
         const val DEFAULT_PAGE = 1
@@ -44,9 +48,23 @@ class OnSellViewModel : ViewModel() {
     }
 
     private fun listContentByPage(page: Int) {
+        pageState.value = LoadState.LOADING
         viewModelScope.launch {
-            val onSellList = onSellRepository.getOnSellList(page)
-            contentList.value = onSellList.tbk_dg_optimus_material_response.result_list.map_data
+            try {
+                val onSellList = onSellRepository.getOnSellList(page)
+                if(onSellList.tbk_dg_optimus_material_response.result_list.map_data.isEmpty()){
+                    pageState.value = LoadState.EMPTY
+                }else{
+                    contentList.value = onSellList.tbk_dg_optimus_material_response.result_list.map_data
+                    pageState.value = LoadState.SUCCESS
+                }
+            } catch (e: Exception) {
+                if (e is NullPointerException) {
+                    pageState.value = LoadState.EMPTY
+                } else {
+                    pageState.value = LoadState.ERROR
+                }
+            }
         }
     }
 

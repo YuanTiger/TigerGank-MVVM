@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.my.gank.R
 import com.my.gank.databinding.ActivityOnSellBinding
+import com.my.gank.example.tabao.base.LoadState
 import com.my.gank.example.tabao.onsell.adapter.OnSellAdapter
 import com.my.gank.example.tabao.utils.SizeUtils
 
@@ -78,8 +79,33 @@ class OnSellActivity : AppCompatActivity() {
                 //更新适配器
                 onSellAdapter.setData(it)
             })
+
+            pageState.observe(this@OnSellActivity, {
+                hideAllView()
+                when (it) {
+                    LoadState.SUCCESS -> {
+                        viewBinding.recyclerView.visibility = View.VISIBLE
+                    }
+                    LoadState.EMPTY -> {
+                        viewBinding.emptyView.visibility = View.VISIBLE
+                    }
+                    LoadState.ERROR -> {
+                        viewBinding.errorView.visibility = View.VISIBLE
+                    }
+                    LoadState.LOADING -> {
+                        viewBinding.loadingView.visibility = View.VISIBLE
+                    }
+                }
+            })
         }.loadContent()
 
+    }
+
+    private fun hideAllView() {
+        viewBinding.recyclerView.visibility = View.GONE
+        viewBinding.loadingView.visibility = View.GONE
+        viewBinding.emptyView.visibility = View.GONE
+        viewBinding.errorView.visibility = View.GONE
     }
 
 
