@@ -3,6 +3,7 @@ package com.my.gank.example.tabao.onsell
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.my.gank.example.tabao.onsell.bean.MapData
 import kotlinx.coroutines.launch
 
 /**
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
  */
 class OnSellViewModel : ViewModel() {
 
-    val contentList = MutableLiveData<MutableList<String>>()
+    val contentList = MutableLiveData<List<MapData>>()
 
     companion object {
         const val DEFAULT_PAGE = 1
@@ -45,7 +46,7 @@ class OnSellViewModel : ViewModel() {
     private fun listContentByPage(page: Int) {
         viewModelScope.launch {
             val onSellList = onSellRepository.getOnSellList(page)
-            print("onSellList:"+onSellList.tbk_dg_optimus_material_response.result_list.map_data.size)
+            contentList.value = onSellList.tbk_dg_optimus_material_response.result_list.map_data
         }
     }
 
