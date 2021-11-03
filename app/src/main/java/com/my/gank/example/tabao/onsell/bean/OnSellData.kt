@@ -40,7 +40,7 @@ data class MapData(
     val level_one_category_name: String,
     val nick: String,
     val pict_url: String,
-    val seller_id: Int,
+    val seller_id: Long,
     val shop_title: Any,
     val small_images: SmallImages,
     val title: String,

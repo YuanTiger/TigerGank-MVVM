@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
  * -----------
  * 提供API Service
  */
-class RetrofitClient {
+object RetrofitClient {
 
     val okHttpClient = OkHttpClient.Builder()
         .callTimeout(10, TimeUnit.SECONDS)

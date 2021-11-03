@@ -16,5 +16,7 @@ class OnSellActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val viewModel = ViewModelProvider(this).get(OnSellViewModel::class.java)
+
+        viewModel.loadContent()
     }
 }

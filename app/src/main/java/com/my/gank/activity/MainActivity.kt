@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.my.gank.R
 import com.my.gank.base.lifecycle.ActivityLifecycleObserver
+import com.my.gank.example.tabao.onsell.OnSellActivity
 import com.my.gank.test.databinding.five.DataBindingTestActivity_5
 import com.my.gank.test.databinding.four.DataBindingTestActivity_4
 import com.my.gank.test.databinding.one.DataBindingTestActivity
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tv_test -> {
-                val intent = Intent(this, Paging_Activity_1::class.java)
+                val intent = Intent(this, OnSellActivity::class.java)
                 startActivity(intent)
             }
             else -> {

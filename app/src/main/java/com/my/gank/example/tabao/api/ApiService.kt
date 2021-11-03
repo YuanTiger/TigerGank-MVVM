@@ -20,5 +20,5 @@ interface ApiService {
 
 
     @GET("onSell/{page}")
-    suspend fun getOnSellList(@Path("page") page:Int):ResultData_TaoBao<OnSellData>  
+    suspend fun getOnSellList(@Path("page") page:Int):ResultData_TaoBao<OnSellData>
 }
