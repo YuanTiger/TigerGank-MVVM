@@ -20,17 +20,15 @@ class OnSellViewModel : ViewModel() {
 
     val pageState = MutableLiveData<LoadState>()
 
-    companion object {
-        const val DEFAULT_PAGE = 1
-    }
-
     private var mCurrentPage = DEFAULT_PAGE
-
     //懒加载
     private val onSellRepository by lazy {
         OnSellRepository()
     }
 
+    companion object {
+        const val DEFAULT_PAGE = 1
+    }
 
     /**
      * 加载首页内容

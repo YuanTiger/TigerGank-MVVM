@@ -48,7 +48,7 @@ public class Navigation_HomeFragment extends Fragment {
                         .toBundle();
 
                 NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_homeFragment_to_detailFragment, bundle);
+                navController.navigate(R.id.action_homeFragment_to_detailFragment_1, bundle);
             }
         });
     }

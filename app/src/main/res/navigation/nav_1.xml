@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_navigation_1">
 
         <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
+            android:id="@+id/action_homeFragment_to_detailFragment_1"
             app:destination="@id/detailFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
