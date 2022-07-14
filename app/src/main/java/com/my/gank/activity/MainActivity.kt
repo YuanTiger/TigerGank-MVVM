@@ -8,21 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.my.gank.R
 import com.my.gank.base.lifecycle.ActivityLifecycleObserver
 import com.my.gank.example.tabao.onsell.OnSellActivity
-import com.my.gank.test.databinding.five.DataBindingTestActivity_5
-import com.my.gank.test.databinding.four.DataBindingTestActivity_4
-import com.my.gank.test.databinding.one.DataBindingTestActivity
-import com.my.gank.test.databinding.seven.DataBindingTestActivity_7
-import com.my.gank.test.databinding.six.DataBindingTestActivity_6
-import com.my.gank.test.databinding.three.DataBindingTestActivity_3
-import com.my.gank.test.databinding.two.DataBindingTestActivity_2
-import com.my.gank.test.lifecycle.MyChronometer
-import com.my.gank.test.navigation.one.Navigation_Activity_1
-import com.my.gank.test.navigation.three.Navigation_Activity_3
-import com.my.gank.test.navigation.two.Navigation_Activity_2
-import com.my.gank.test.paging.one.Paging_Activity_1
-import com.my.gank.test.room.one.RoomTestActivity_1
-import com.my.gank.test.room.two.RoomTestActivity_2
-import com.my.gank.test.workmanager.one.WorkManager_Activity_1
+import com.my.gank.study.lifecycle.MyChronometer
 
 /**
  * Author: mengyuan

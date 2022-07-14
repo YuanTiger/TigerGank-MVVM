@@ -15,7 +15,7 @@
         android:textSize="20sp" />
 
 
-    <com.my.gank.test.lifecycle.MyChronometer
+    <com.my.gank.study.lifecycle.MyChronometer
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

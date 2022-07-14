@@ -7,7 +7,7 @@
 
         <variable
             name="user"
-            type="com.my.gank.test.room.RoomTest_User" />
+            type="com.my.gank.study.room.RoomTest_User" />
 
     </data>
 

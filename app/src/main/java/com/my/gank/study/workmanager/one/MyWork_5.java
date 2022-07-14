@@ -1,0 +1,31 @@
+package com.my.gank.study.workmanager.one;
+
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
+
+import com.my.gank.utils.LogUtils;
+
+/**
+ * Author: mengyuan
+ * Date  : 2021/10/20/11:49 上午
+ * E-Mail: mengyuanzz@126.com
+ * -----------
+ */
+public class MyWork_5 extends Worker {
+
+
+    public MyWork_5(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+    }
+
+    @NonNull
+    @Override
+    public Result doWork() {
+        LogUtils.iTag("YuanTiger","任务5-执行完成");
+
+        return Result.success();
+    }
+}

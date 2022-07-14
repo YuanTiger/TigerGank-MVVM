@@ -8,11 +8,11 @@
 
         <variable
             name="idol"
-            type="com.my.gank.test.databinding.one.Idol" />
+            type="com.my.gank.study.databinding.one.Idol" />
 
         <variable
             name="eventHandler"
-            type="com.my.gank.test.databinding.one.EventHandleListener" />
+            type="com.my.gank.study.databinding.one.EventHandleListener" />
         
     </data>
 

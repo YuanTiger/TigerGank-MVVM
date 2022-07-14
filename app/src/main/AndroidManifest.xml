@@ -28,25 +28,25 @@
 
         <activity android:name=".example.tabao.onsell.OnSellActivity" />
         <activity android:name=".activity.TestActivity" />
-        <activity android:name=".test.lifecycle.MyLocationTestActivity" />
-        <activity android:name=".test.viewmodel.one.ViewModelTestActivity" />
-        <activity android:name=".test.viewmodel.two.ViewModelTestActivity_2" />
-        <activity android:name=".test.databinding.one.DataBindingTestActivity" />
-        <activity android:name=".test.databinding.two.DataBindingTestActivity_2" />
-        <activity android:name=".test.databinding.three.DataBindingTestActivity_3" />
-        <activity android:name=".test.databinding.four.DataBindingTestActivity_4" />
-        <activity android:name=".test.databinding.five.DataBindingTestActivity_5" />
-        <activity android:name=".test.databinding.six.DataBindingTestActivity_6" />
-        <activity android:name=".test.databinding.seven.DataBindingTestActivity_7" />
-        <activity android:name=".test.room.one.RoomTestActivity_1" />
-        <activity android:name=".test.room.two.RoomTestActivity_2" />
-        <activity android:name=".test.navigation.one.Navigation_Activity_1" />
-        <activity android:name=".test.navigation.two.Navigation_Activity_2" />
-        <activity android:name=".test.navigation.three.Navigation_Activity_3" />
-        <activity android:name=".test.workmanager.one.WorkManager_Activity_1" />
-        <activity android:name=".test.paging.one.Paging_Activity_1" />
+        <activity android:name=".study.lifecycle.MyLocationTestActivity" />
+        <activity android:name=".study.viewmodel.one.ViewModelTestActivity" />
+        <activity android:name=".study.viewmodel.two.ViewModelTestActivity_2" />
+        <activity android:name=".study.databinding.one.DataBindingTestActivity" />
+        <activity android:name=".study.databinding.two.DataBindingTestActivity_2" />
+        <activity android:name=".study.databinding.three.DataBindingTestActivity_3" />
+        <activity android:name=".study.databinding.four.DataBindingTestActivity_4" />
+        <activity android:name=".study.databinding.five.DataBindingTestActivity_5" />
+        <activity android:name=".study.databinding.six.DataBindingTestActivity_6" />
+        <activity android:name=".study.databinding.seven.DataBindingTestActivity_7" />
+        <activity android:name=".study.room.one.RoomTestActivity_1" />
+        <activity android:name=".study.room.two.RoomTestActivity_2" />
+        <activity android:name=".study.navigation.one.Navigation_Activity_1" />
+        <activity android:name=".study.navigation.two.Navigation_Activity_2" />
+        <activity android:name=".study.navigation.three.Navigation_Activity_3" />
+        <activity android:name=".study.workmanager.one.WorkManager_Activity_1" />
+        <activity android:name=".study.paging.one.Paging_Activity_1" />
 
-        <service android:name=".test.lifecycle.MyLocationService" />
+        <service android:name=".study.lifecycle.MyLocationService" />
     </application>
 
 </manifest>

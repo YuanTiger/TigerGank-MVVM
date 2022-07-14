@@ -8,7 +8,7 @@
 
         <variable
             name="userViewModel"
-            type="com.my.gank.test.databinding.four.DataBinding_UserViewModel" />
+            type="com.my.gank.study.databinding.four.DataBinding_UserViewModel" />
 
 
     </data>

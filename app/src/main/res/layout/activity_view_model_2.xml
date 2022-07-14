@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_top"
-        android:name="com.my.gank.test.viewmodel.two.ViewModelTestFragment_Top"
+        android:name="com.my.gank.study.viewmodel.two.ViewModelTestFragment_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/guide_line"
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/fragment_bottom"
-        android:name="com.my.gank.test.viewmodel.two.ViewModelTestFragment_Bottom"
+        android:name="com.my.gank.study.viewmodel.two.ViewModelTestFragment_Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

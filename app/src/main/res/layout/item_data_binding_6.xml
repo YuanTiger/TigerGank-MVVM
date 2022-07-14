@@ -8,7 +8,7 @@
 
         <variable
             name="idol"
-            type="com.my.gank.test.databinding.six.DataBinding_IdolBean_6" />
+            type="com.my.gank.study.databinding.six.DataBinding_IdolBean_6" />
 
     </data>
 

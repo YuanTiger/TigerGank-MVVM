@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.my.gank.test.navigation.one.Navigation_HomeFragment"
+        android:name="com.my.gank.study.navigation.one.Navigation_HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_navigation_1">
 
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.my.gank.test.navigation.one.Navigation_UserDetailFragment"
+        android:name="com.my.gank.study.navigation.one.Navigation_UserDetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_navigation_detail_1">
 

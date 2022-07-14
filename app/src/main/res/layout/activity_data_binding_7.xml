@@ -225,7 +225,7 @@
 
         <variable
             name="viewModel"
-            type="com.my.gank.test.databinding.seven.DataBinding_ViewModel_7" />
+            type="com.my.gank.study.databinding.seven.DataBinding_ViewModel_7" />
 
     </data>
 
